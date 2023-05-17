@@ -1,0 +1,51 @@
+﻿@model ProyectoInmuebles.Models.Empleado
+
+@{
+    ViewData["Title"] = "DeleteEmpleado";
+}
+
+<h1>Eliminar Empleado</h1>
+
+<h3>¿Estás seguro de que quieres eliminar esto?</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idEmpleado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idEmpleado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteEmpleado">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="IndexEmpleados">Regresar</a>
+    </form>
+</div>
+
+@if (ViewBag.MENSAJE != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.MENSAJE
+    </div>
+}

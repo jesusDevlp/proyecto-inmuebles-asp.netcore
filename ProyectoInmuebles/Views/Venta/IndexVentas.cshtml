@@ -1,0 +1,107 @@
+﻿@model IEnumerable<ProyectoInmuebles.Models.Venta>
+
+@{
+    ViewData["Title"] = "IndexVentas";
+}
+
+<h1>Lista de Ventas</h1>
+
+
+<p>
+    @Html.ActionLink("Agregar Venta", "CreateVentas") 
+</p>
+
+@if (ViewBag.MENSAJE != null)
+{
+    <br />
+    <div class="alert alert-success">
+        @ViewBag.MENSAJE
+    </div>
+    <br />
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripInmueble)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nroDocumento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descrpCondicion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripFormaPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripTipoInmueble)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.totalGeneral)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fechaVenta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripInmueble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nroDocumento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descrpCondicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripFormaPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripTipoInmueble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalGeneral)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaVenta)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditVentas", new { id=item.idVenta }) |
+                @Html.ActionLink("Detalles", "DetailsVentas", new { id=item.idVenta }) |
+                @Html.ActionLink("Eliminar", "DeleteVentas", new { id=item.idVenta })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

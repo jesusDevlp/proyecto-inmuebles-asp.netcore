@@ -1,0 +1,86 @@
+﻿@model ProyectoInmuebles.Models.Venta
+
+@{
+    ViewData["Title"] = "DeleteVentas";
+}
+
+<h1>Eliminar Venta</h1>
+
+<h3>¿Estás seguro de que quieres eliminar esto?</h3>
+<div>
+    <h4>Venta</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idVenta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idVenta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descripInmueble)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripInmueble)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombreEmpleado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombreEmpleado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombreCliente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombreCliente)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nroDocumento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nroDocumento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descrpCondicion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descrpCondicion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descripFormaPago)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripFormaPago)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.totalVenta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.totalVenta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.descripTipoInmueble)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripTipoInmueble)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.totalGeneral)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.totalGeneral)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fechaVenta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fechaVenta)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteVentas">
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="IndexVentas">Regresar al Listado</a>
+    </form>
+</div>

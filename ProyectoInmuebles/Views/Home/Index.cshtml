@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProyectoInmuebles.Models.Inmueble>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+    <p>Sistema de venta de inmuebles</p>
+</div>
+
+<div class="container">
+    <h3>Inmuebles en venta</h3>
+    <div class="row gy-3 my-3">
+        @foreach (var item in Model)
+        {
+                
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card" style="width: 20rem;">
+                    <img src="@Html.DisplayFor(modelItem => item.urlImagen)" width="350px" height="250px" class="card-img-top" alt="@Html.DisplayFor(modelItem => item.descInmueble)">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">@Html.DisplayFor(modelItem => item.descInmueble)</h5>
+                        <ul>
+                            <li>Tipo: @Html.DisplayFor(modelItem => item.desc_tipo_Inmueble)</li>
+                            <li>Ubicación: @Html.DisplayFor(modelItem => item.desc_tipo_Inmueble)</li>
+                            <li>Distrito: @Html.DisplayFor(modelItem => item.nombreDistrito)</li>
+                            <li>Precio: @Html.DisplayFor(modelItem => item.costoInmueble)</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Vender</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

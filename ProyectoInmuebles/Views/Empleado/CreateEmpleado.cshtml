@@ -1,0 +1,56 @@
+﻿@model ProyectoInmuebles.Models.Empleado
+
+@{
+    ViewData["Title"] = "CreateEmpleado";
+}
+
+<h1>Agregar Empleado</h1>
+
+<h4>Empleado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateEmpleado">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="idEmpleado" class="control-label"></label>
+                <input asp-for="idEmpleado" class="form-control" />
+                <span asp-validation-for="idEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="correo" class="control-label"></label>
+                <input asp-for="correo" class="form-control" />
+                <span asp-validation-for="correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefono" class="control-label"></label>
+                <input asp-for="telefono" class="form-control" />
+                <span asp-validation-for="telefono" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="IndexEmpleados">Volver</a>
+</div>
+
+@if (ViewBag.MENSAJE != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.MENSAJE
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

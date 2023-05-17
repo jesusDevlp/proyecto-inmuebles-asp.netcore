@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProyectoInmuebles.Models.Empleado>
+
+@{
+    ViewData["Title"] = "IndexEmpleados";
+}
+
+<h1>IndexEmpleados</h1>
+
+<p>
+    <a asp-action="CreateEmpleado">Agregar Empleado</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditEmpleado", new { id=item.idEmpleado }) |
+                @Html.ActionLink("Detalles", "DetailsEmpleado", new { id=item.idEmpleado }) |
+                @Html.ActionLink("Eliminar", "DeleteEmpleado", new { id=item.idEmpleado })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
