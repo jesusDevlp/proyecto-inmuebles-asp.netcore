@@ -1,0 +1,76 @@
+﻿@model ProyectoInmuebles.Models.Inmueble
+
+@{
+    ViewData["Title"] = "EditInmuebles";
+}
+
+<h1>EditInmuebles</h1>
+
+<h4>Inmueble</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditInmuebles" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="idInmueble" class="control-label"></label>
+                <input asp-for="idInmueble" class="form-control" readonly="readonly" />
+                <span asp-validation-for="idInmueble" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idTipoInmueble" class="control-label"></label>
+                <select asp-for="idTipoInmueble" asp-items="@ViewBag.tipoInmuebles" class="form-select"></select>
+                <span asp-validation-for="idTipoInmueble" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="descInmueble" class="control-label"></label>
+                <input asp-for="descInmueble" class="form-control" />
+                <span asp-validation-for="descInmueble" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ubiInmueble" class="control-label"></label>
+                <input asp-for="ubiInmueble" class="form-control" />
+                <span asp-validation-for="ubiInmueble" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="costoInmueble" class="control-label"></label>
+                <input asp-for="costoInmueble" class="form-control" />
+                <input asp-for="urlImagen" class="form-control" type="hidden" />
+                <span asp-validation-for="costoInmueble" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idDistrito" class="control-label"></label>
+                <select asp-for="idDistrito" asp-items="@ViewBag.distritos" class="form-select"></select>
+                <span asp-validation-for="idDistrito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="formFile" class="control-label"></label>
+                <input asp-for="formFile" class="form-control" type="file" />
+            </div>
+            <div class="form-group">
+                <img src="@Url.Content(string.Format("~/ImagenInmueble/{0}",Model.urlImagen))" alt="NO SE ENCONTRO IMAGEN" width="100px" height="80px" />
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Editar Inmueble" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-action="ListaDeInmuebles" class="btn btn-primary">Lista De Inmuebles</a>
+</div>
+
+@if (@ViewBag.mensaje !=null)
+{
+    <div class="alert alert-success">
+        @ViewBag.mensaje
+    </div>
+}
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

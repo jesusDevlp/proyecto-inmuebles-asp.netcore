@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ProyectoInmuebles.Models.Inmueble>
+
+@{
+    ViewData["Title"] = "ListaDeInmuebles";
+}
+
+<h1>ListaDeInmuebles</h1>
+
+@if (@ViewBag.mensaje !=null)
+{
+    <div class="alert alert-success">
+        @ViewBag.mensaje
+    </div>
+}
+
+<p>
+    <a asp-action="CreateInmuebles" class="btn btn-primary">Nuevo Inmueble</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idInmueble)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.descInmueble)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ubiInmueble)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.costoInmueble)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.urlImagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreDistrito)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idInmueble)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.descInmueble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ubiInmueble)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costoInmueble)
+            </td>
+            
+            <td>
+                <img src="@Url.Content(string.Format("~/ImagenInmueble/{0}",item.urlImagen))" alt="NO SE ENCONTRO IMAGEN" width="100px" height="80px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreDistrito)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Editar","EditInmuebles", new { id=item.idInmueble  }) |
+                @Html.ActionLink("Eliminar", "DeleteInmuebles", new {  id=item.idInmueble},new {@class="pipi",@onclick="return confirm('¿Estas Seguro De Eliminar?')"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

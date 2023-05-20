@@ -405,3 +405,36 @@ GO
 
 exec sp_GetInmuebleHome
 go
+
+CREATE OR ALTER PROCEDURE sp_GetInmueble
+AS
+BEGIN
+	SELECT i.id_inmueble, i.desc_inmueble,i.ubic_inmueble,i.costo_inmueble, d.nombre_distrito,i.url_imagen,i.id_distrito,i.id_Tipo_Inmueble
+	FROM inmueble i inner join distrito d on i.id_distrito = d.id_distrito where i.eliminado in ('No')
+END
+GO
+exec  sp_GetInmueble
+go
+
+-- PARA GRABAR INMUEBLE
+CREATE OR ALTER PROCEDURE PA_GRABAR_INMUEBLE
+@id_Inmueble int,@id_Tipo_Inmueble int,@desc_Inmueble VARCHAR(100),
+@ubic_Inmueble VARCHAR(100),@costo_Inmueble decimal,@id_Distrito int,
+@url_imagen varchar(max)
+AS
+	MERGE inmueble AS TARGET
+	USING (SELECT @id_Inmueble,@id_Tipo_Inmueble,@desc_Inmueble,@ubic_Inmueble,@costo_Inmueble,@id_Distrito,@url_imagen,'No')
+	AS SOURCE(id_Inmueble,id_Tipo_Inmueble,desc_Inmueble,ubic_Inmueble,costo_Inmueble,id_Distrito,url_imagen,eliminado)
+	ON TARGET.id_Inmueble = SOURCE.id_Inmueble
+	WHEN MATCHED THEN
+		UPDATE SET TARGET.id_Tipo_Inmueble=SOURCE.id_Tipo_Inmueble,	
+		           TARGET.desc_Inmueble=SOURCE.desc_Inmueble,
+		           TARGET.ubic_Inmueble=SOURCE.ubic_Inmueble,
+		           TARGET.costo_Inmueble=SOURCE.costo_Inmueble,
+		           TARGET.id_Distrito=SOURCE.id_Distrito,
+		           TARGET.url_imagen=SOURCE.url_imagen,
+				   TARGET.eliminado=SOURCE.eliminado
+	WHEN NOT MATCHED THEN
+		INSERT VALUES(SOURCE.id_Tipo_Inmueble,SOURCE.desc_Inmueble,SOURCE.ubic_Inmueble,SOURCE.costo_Inmueble,
+		              SOURCE.id_Distrito,SOURCE.url_imagen,SOURCE.eliminado);
+GO

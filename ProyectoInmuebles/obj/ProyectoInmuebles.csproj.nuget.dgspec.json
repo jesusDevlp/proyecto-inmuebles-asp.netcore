@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CICLO 5\\Servicios Web l\\SlnProyectoInmuebles\\ProyectoInmuebles\\ProyectoInmuebles.csproj": {}
+    "C:\\Users\\USER\\Desktop\\Proyecto Net Core\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj": {}
   },
   "projects": {
-    "D:\\CICLO 5\\Servicios Web l\\SlnProyectoInmuebles\\ProyectoInmuebles\\ProyectoInmuebles.csproj": {
+    "C:\\Users\\USER\\Desktop\\Proyecto Net Core\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CICLO 5\\Servicios Web l\\SlnProyectoInmuebles\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Desktop\\Proyecto Net Core\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
         "projectName": "ProyectoInmuebles",
-        "projectPath": "D:\\CICLO 5\\Servicios Web l\\SlnProyectoInmuebles\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "D:\\CICLO 5\\Servicios Web l\\SlnProyectoInmuebles\\ProyectoInmuebles\\obj\\",
+        "projectPath": "C:\\Users\\USER\\Desktop\\Proyecto Net Core\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\Desktop\\Proyecto Net Core\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

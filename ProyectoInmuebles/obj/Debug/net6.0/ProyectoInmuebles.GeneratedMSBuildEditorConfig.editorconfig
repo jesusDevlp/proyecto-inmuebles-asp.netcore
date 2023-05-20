@@ -5,80 +5,93 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoInmuebles
 build_property.RootNamespace = ProyectoInmuebles
-build_property.ProjectDir = D:\CICLO 5\Servicios Web l\SlnProyectoInmuebles\ProyectoInmuebles\
+build_property.ProjectDir = C:\Users\USER\Desktop\Proyecto Net Core\proyecto-inmuebles-asp.netcore\ProyectoInmuebles\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\CICLO 5\Servicios Web l\SlnProyectoInmuebles\ProyectoInmuebles
+build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\Proyecto Net Core\proyecto-inmuebles-asp.netcore\ProyectoInmuebles
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Empleado/CreateEmpleado.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Empleado/CreateEmpleado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cQ3JlYXRlRW1wbGVhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Empleado/DeleteEmpleado.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Empleado/DeleteEmpleado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cRGVsZXRlRW1wbGVhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Empleado/DetailsEmpleado.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Empleado/DetailsEmpleado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cRGV0YWlsc0VtcGxlYWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Empleado/EditEmpleado.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Empleado/EditEmpleado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cRWRpdEVtcGxlYWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Empleado/IndexEmpleados.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Empleado/IndexEmpleados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cSW5kZXhFbXBsZWFkb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Home/Index.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Home/Privacy.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Shared/Error.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Inmueble/CreateInmuebles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5tdWVibGVcQ3JlYXRlSW5tdWVibGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Inmueble/EditInmuebles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5tdWVibGVcRWRpdElubXVlYmxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Inmueble/ListaDeInmuebles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5tdWVibGVcTGlzdGFEZUlubXVlYmxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Venta/CreateVentas.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Venta/CreateVentas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcQ3JlYXRlVmVudGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Venta/DeleteVentas.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Venta/DeleteVentas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRGVsZXRlVmVudGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Venta/DetailsVentas.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Venta/DetailsVentas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRGV0YWlsc1ZlbnRhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Venta/EditVentas.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Venta/EditVentas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcRWRpdFZlbnRhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Venta/IndexVentas.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Venta/IndexVentas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVudGFcSW5kZXhWZW50YXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/_ViewImports.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/_ViewStart.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CICLO 5/Servicios Web l/SlnProyectoInmuebles/ProyectoInmuebles/Views/Shared/_Layout.cshtml]
+[C:/Users/USER/Desktop/Proyecto Net Core/proyecto-inmuebles-asp.netcore/ProyectoInmuebles/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-k9vlc5kr86

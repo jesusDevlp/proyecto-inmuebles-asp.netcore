@@ -10,7 +10,7 @@ namespace ProyectoInmuebles.Models
         [Display(Name = "Tipo Inmueble")]
         public int idTipoInmueble { get; set; }
 
-        [Display(Name = "Inmueble")]
+        [Display(Name = "Descripcion Inmueble")]
         public String descInmueble { get; set; } = string.Empty;
 
         [Display(Name = "Ubicación")]
@@ -19,7 +19,7 @@ namespace ProyectoInmuebles.Models
         [Display(Name = "Costo")]
         public decimal costoInmueble { get; set; }
 
-        [Display(Name = "Id Distrito")]
+        [Display(Name = "Distrito")]
         public int idDistrito { get; set; }
 
         [Display(Name = "Imagen")]
@@ -32,5 +32,8 @@ namespace ProyectoInmuebles.Models
         /*HOME*/
         [Display(Name = "Descripción tipo inmueble")]
         public string desc_tipo_Inmueble { get; set; } = string.Empty;
+
+        [Display(Name = "Imagen")]
+        public IFormFile? formFile { get; set; }
     }
 }
