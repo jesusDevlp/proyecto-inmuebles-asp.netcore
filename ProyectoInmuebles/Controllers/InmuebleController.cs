@@ -17,6 +17,15 @@ namespace ProyectoInmuebles.Controllers
             this.env = env;
         }
 
+        private bool VerificarSesion()
+        {
+            if (HttpContext.Session.GetString("usuario") == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private List<Inmueble> ListaInmuebles()
         {
             var listaInmuebles = new List<Inmueble>();
@@ -88,6 +97,15 @@ namespace ProyectoInmuebles.Controllers
 
         public IActionResult ListaDeInmuebles()
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
+
+
             if (TempData["mensaje"] !=null)
             {
                 ViewBag.mensaje=TempData["mensaje"];
@@ -97,6 +115,14 @@ namespace ProyectoInmuebles.Controllers
 
         public IActionResult CreateInmuebles()
         {
+
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             ViewBag.distritos=new SelectList(ListaDistritos(), "idDistrito", "nombreDistrito");
             ViewBag.tipoInmuebles=new SelectList(ListaDeTipoInmueble(), "idTipoInmueble", "descripInmueble");
             return View(new Inmueble());
@@ -106,6 +132,14 @@ namespace ProyectoInmuebles.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult CreateInmuebles(Inmueble im)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
+
             if (ModelState.IsValid)
             {
                 Inmueble? existeInmueble = ListaInmuebles().FirstOrDefault(i => i.idInmueble == im.idInmueble);
@@ -142,6 +176,14 @@ namespace ProyectoInmuebles.Controllers
         public IActionResult EditInmuebles(int id)
         {
 
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
+
             Inmueble? im = ListaInmuebles().FirstOrDefault(i => i.idInmueble == id);
             if (im==null) return RedirectToAction("ListaDeInmuebles");
             else
@@ -156,6 +198,13 @@ namespace ProyectoInmuebles.Controllers
 
         public IActionResult EditInmuebles(Inmueble im)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             if (ModelState.IsValid)
             {
                 if (im.formFile !=null)
@@ -189,6 +238,13 @@ namespace ProyectoInmuebles.Controllers
        
         public IActionResult DeleteInmuebles(int id)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             SqlHelper.ExecuteNonQuery(cn, "PA_ELIMINAR_INMUEBLE", id);
             TempData["mensaje"]="Inmueble Eliminado Correctamente";
             return RedirectToAction("ListaDeInmuebles");

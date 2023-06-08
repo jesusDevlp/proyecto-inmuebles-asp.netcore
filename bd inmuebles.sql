@@ -438,3 +438,31 @@ AS
 		INSERT VALUES(SOURCE.id_Tipo_Inmueble,SOURCE.desc_Inmueble,SOURCE.ubic_Inmueble,SOURCE.costo_Inmueble,
 		              SOURCE.id_Distrito,SOURCE.url_imagen,SOURCE.eliminado);
 GO
+
+-- MODIFICADO 08-06-2023
+-- TABLA USUARIO
+CREATE TABLE USUARIO
+(
+   codigo int primary key identity(1,1),
+   nombre varchar(50),
+   apellido varchar(50),
+   telefono varchar(9),
+   email varchar(60) unique,
+   contra varchar(60) 
+);
+go
+
+CREATE OR ALTER PROCEDURE INICIAR_SESION
+@email varchar(60),@contra varchar(60)
+AS
+SELECT*FROM USUARIO u WHERE u.email=@email and @contra=@contra
+GO
+
+INSERT INTO USUARIO (nombre,apellido,telefono,email,contra) VALUES ('richard','rivas','123456789','richard5d@gmail.com','123');
+INSERT INTO USUARIO (nombre,apellido,telefono,email,contra) VALUES ('rodrigo','Abad','123456789','rodrigo@gmail.com','123');
+INSERT INTO USUARIO (nombre,apellido,telefono,email,contra) VALUES ('alvaro','Liñan','123456789','alvaro@gmail.com','123');
+INSERT INTO USUARIO (nombre,apellido,telefono,email,contra) VALUES ('kerly','Riveros','123456789','kerly@gmail.com','123');
+INSERT INTO USUARIO (nombre,apellido,telefono,email,contra) VALUES ('alexander','Morales','123456789','alexander@gmail.com','123');
+go
+
+select*from USUARIO;

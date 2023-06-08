@@ -17,7 +17,16 @@ namespace ProyectoInmuebles.Controllers
             cad_cn = config.GetConnectionString("cn1");
         }
 
-     
+        private bool VerificarSesion()
+        {
+            if (HttpContext.Session.GetString("usuario") == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         private List<Empleado> getEmpleados()
         {
             List<Empleado> empleados = new List<Empleado>();
@@ -46,12 +55,27 @@ namespace ProyectoInmuebles.Controllers
         // GET: EmpleadoController
         public ActionResult IndexEmpleados()
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             return View(getEmpleados());
         }
 
         // GET: EmpleadoController/Details/5
         public ActionResult DetailsEmpleado(int id)
         {
+
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Empleado? buscado = getEmpleados().Find(empleado => empleado.idEmpleado.Equals(id));
             return View(buscado);
         }
@@ -59,6 +83,13 @@ namespace ProyectoInmuebles.Controllers
         // GET: EmpleadoController/Create
         public ActionResult CreateEmpleado()
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Empleado empleado = new Empleado();
             return View(empleado);
         }
@@ -68,6 +99,13 @@ namespace ProyectoInmuebles.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateEmpleado(Empleado empleado)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             try
             {
                 if(ModelState.IsValid == true)
@@ -90,6 +128,13 @@ namespace ProyectoInmuebles.Controllers
         // GET: EmpleadoController/Edit/5
         public ActionResult EditEmpleado(int id)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Empleado? buscado = getEmpleados().Find(empleado => empleado.idEmpleado.Equals(id));
             return View(buscado);
         }
@@ -99,6 +144,13 @@ namespace ProyectoInmuebles.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditEmpleado(int id, Empleado empleado)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             try
             {
                 SqlHelper.ExecuteNonQuery(cad_cn, "PA_GRABAR_EMPLEADO",
@@ -119,6 +171,13 @@ namespace ProyectoInmuebles.Controllers
         // GET: EmpleadoController/Delete/5
         public ActionResult DeleteEmpleado(int id)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Empleado? buscado = getEmpleados().Find(empleado => empleado.idEmpleado.Equals(id));
             return View(buscado);
         }
@@ -128,6 +187,13 @@ namespace ProyectoInmuebles.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteEmpleado(int id, IFormCollection collection)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
 
             Empleado? buscado = getEmpleados().Find(empleado => empleado.idEmpleado.Equals(id));
 

@@ -19,6 +19,15 @@ namespace ProyectoInmuebles.Controllers
             cad_cn = config.GetConnectionString("cn1");
         }
 
+        private bool VerificarSesion()
+        {
+            if (HttpContext.Session.GetString("usuario") == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private List<TipoInmueble> getTipoInmuebles()
         {
             List<TipoInmueble> tipoInmuebles = new List<TipoInmueble>();
@@ -168,12 +177,26 @@ namespace ProyectoInmuebles.Controllers
         // GET: VentaController
         public ActionResult IndexVentas()
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             return View(getVentas());
         }
 
         // GET: VentaController/Details/5
         public ActionResult DetailsVentas(int id)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id)); 
             return View(buscado);
         }
@@ -181,6 +204,13 @@ namespace ProyectoInmuebles.Controllers
         // GET: VentaController/Create
         public ActionResult CreateVentas()
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Venta venta = new Venta();
             ViewBag.tipos = new SelectList(getTipoInmuebles(), "idTipoInmueble", "descripInmueble");
             ViewBag.inmuebles = new SelectList(getInmuebles(), "idInmueble", "descInmueble");
@@ -196,6 +226,13 @@ namespace ProyectoInmuebles.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateVentas(Venta venta)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             try
             {
                 //if(ModelState.IsValid == true)
@@ -226,6 +263,13 @@ namespace ProyectoInmuebles.Controllers
         // GET: VentaController/Edit/5
         public ActionResult EditVentas(int id)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id));
 
             ViewBag.tipos = new SelectList(getTipoInmuebles(), "idTipoInmueble", "descripInmueble");
@@ -244,6 +288,13 @@ namespace ProyectoInmuebles.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditVentas(int id, Venta venta)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             try
             {
                 SqlHelper.ExecuteNonQuery(cad_cn, "PA_GRABAR_VENTA",
@@ -273,6 +324,13 @@ namespace ProyectoInmuebles.Controllers
         // GET: VentaController/Delete/5
         public ActionResult DeleteVentas(int id)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id));
             return View(buscado);
            
@@ -283,6 +341,14 @@ namespace ProyectoInmuebles.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteVentas(int id, IFormCollection collection)
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
+
             Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id));
 
 

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Data.SqlClient;
 using ProyectoInmuebles.Models;
+using Newtonsoft.Json;
 
 namespace ProyectoInmuebles.Controllers
 {
@@ -14,7 +15,14 @@ namespace ProyectoInmuebles.Controllers
             cad_cn = config.GetConnectionString("cn1");
             _logger = logger;
         }
-
+        private bool VerificarSesion()
+        {
+            if (HttpContext.Session.GetString("usuario") == null)
+            {
+                return false;
+            }
+            return true;
+        }
         private List<Inmueble> getInmuebles()
         {
             List<Inmueble> inmuebles = new List<Inmueble>();
@@ -43,11 +51,25 @@ namespace ProyectoInmuebles.Controllers
 
         public IActionResult Index()
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;            
             return View(getInmuebles());
         }
 
         public IActionResult Privacy()
         {
+            if (!this.VerificarSesion())
+            {
+                return RedirectToAction("IniciarSesion", "Usuario");
+                ViewBag.session=false;
+            }
+            ViewBag.session=true;
+            ViewBag.email=HttpContext.Session.GetString("email") as string;
             return View();
         }
 
