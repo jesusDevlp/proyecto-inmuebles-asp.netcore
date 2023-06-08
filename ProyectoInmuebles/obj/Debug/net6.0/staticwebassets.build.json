@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Jc9gZ44MUMxljOeOH6GDgereuP29ogKg3VpXwh8AQkY=",
+  "Hash": "pgg26ezi8DO1OsAlyTKAn9mu9pyJuIxlsM8ApDzS7zM=",
   "Source": "ProyectoInmuebles",
   "BasePath": "_content/ProyectoInmuebles",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ImagenInmueble\\08282023122805-goku.jpeg"
+    },
+    {
+      "Identity": "C:\\Desarrollo de Servicios Web Core\\proyecto-inmuebles-net.core-main2\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\wwwroot\\ImagenInmueble\\08382023123828-corte_cabello_hombre.jpg",
+      "SourceId": "ProyectoInmuebles",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Desarrollo de Servicios Web Core\\proyecto-inmuebles-net.core-main2\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\wwwroot\\",
+      "BasePath": "_content/ProyectoInmuebles",
+      "RelativePath": "ImagenInmueble/08382023123828-corte_cabello_hombre.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ImagenInmueble\\08382023123828-corte_cabello_hombre.jpg"
     },
     {
       "Identity": "C:\\Desarrollo de Servicios Web Core\\proyecto-inmuebles-net.core-main2\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\wwwroot\\ImagenInmueble\\16382023073849-corte_cabello_hombre.jpg",

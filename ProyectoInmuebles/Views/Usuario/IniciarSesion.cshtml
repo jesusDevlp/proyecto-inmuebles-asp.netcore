@@ -13,29 +13,6 @@
         <form asp-action="IniciarSesion">
             
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <!--<div class="form-group">
-                <label asp-for="codigo" class="control-label"></label>
-                <input asp-for="codigo" class="form-control" />
-                <span asp-validation-for="codigo" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="nombre" class="control-label"></label>
-                <input asp-for="nombre" class="form-control" />
-                <span asp-validation-for="nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="apellido" class="control-label"></label>
-                <input asp-for="apellido" class="form-control" />
-                <span asp-validation-for="apellido" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefono" class="control-label"></label>
-                <input asp-for="telefono" class="form-control" />
-                <span asp-validation-for="telefono" class="text-danger"></span>
-            </div>
-            -->
-            
             
             <div class="form-group">
                 <label asp-for="email" class="control-label"></label>
@@ -44,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="contra" class="control-label"></label>
-                <input asp-for="contra" class="form-control" />
+                <input asp-for="contra" class="form-control" type="password" />
                 <span asp-validation-for="contra" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -55,7 +32,7 @@
 </div>
 
 @if(@ViewBag.error !=null){
-    <div class="alert-danger">
+    <div class="alert-danger mt-4 p-4">
         @ViewBag.error
     </div>
 }

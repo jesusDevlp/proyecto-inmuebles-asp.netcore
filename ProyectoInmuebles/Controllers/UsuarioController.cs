@@ -47,6 +47,7 @@ namespace ProyectoInmuebles.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
+            ViewBag.session=false;
             ViewBag.error="Credenciales Incorrectas";
             return View(usuario);
         }
