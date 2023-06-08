@@ -455,7 +455,7 @@ go
 CREATE OR ALTER PROCEDURE INICIAR_SESION
 @email varchar(60),@contra varchar(60)
 AS
-SELECT*FROM USUARIO u WHERE u.email=@email and @contra=@contra
+SELECT*FROM USUARIO u WHERE u.email=@email and u.contra=@contra
 GO
 
 INSERT INTO USUARIO (nombre,apellido,telefono,email,contra) VALUES ('richard','rivas','123456789','richard5d@gmail.com','123');
