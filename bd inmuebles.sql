@@ -1,3 +1,6 @@
+use master
+go
+
 drop database  INMUEBLES
 go
 
@@ -5,9 +8,6 @@ create database INMUEBLES
 go
 
 use INMUEBLES
-go
-
-use master
 go
 
 drop table if exists distrito
@@ -385,7 +385,7 @@ AS
 GO
 
 exec PA_GRABAR_VENTA 1,1,1,'Alejandro','11112222',1,1,500,1,450,'1996-07-19'
-
+go
 
 -- PARA ELIMINAR DE FORMA LOGICA VENTA
 CREATE OR ALTER PROCEDURE PA_ELIMINAR_VENTA

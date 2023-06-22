@@ -55,12 +55,12 @@
         </form>
     </div>
 </div>
-<br/>
+<br />
 <div>
     <a asp-action="ListaDeInmuebles" class="btn btn-primary">Lista De Inmuebles</a>
 </div>
 
-@if (@ViewBag.mensaje !=null)
+@if (@ViewBag.mensaje != null)
 {
     <div class="alert alert-danger">
         @ViewBag.mensaje
@@ -68,5 +68,7 @@
 }
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -14,10 +14,10 @@
     <div class="row gy-3 my-3">
         @foreach (var item in Model)
         {
-                
+
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card" style="width: 20rem;">
-                    <img src="@Html.DisplayFor(modelItem => item.urlImagen)" width="350px" height="250px" class="card-img-top" alt="@Html.DisplayFor(modelItem => item.descInmueble)">
+                    <img src="@Url.Content(string.Format("~/ImagenInmueble/{0}",item.urlImagen))" width="350px" height="250px" class="card-img-top" alt="@Html.DisplayFor(modelItem => item.descInmueble)" />
                     <div class="card-body">
                         <h5 class="card-title text-center">@Html.DisplayFor(modelItem => item.descInmueble)</h5>
                         <ul>
@@ -26,7 +26,7 @@
                             <li>Distrito: @Html.DisplayFor(modelItem => item.nombreDistrito)</li>
                             <li>Precio: @Html.DisplayFor(modelItem => item.costoInmueble)</li>
                         </ul>
-                        <a href="#" class="btn btn-primary">Vender</a>
+                        @Html.ActionLink("Vender", "CreateVentas","Venta", new { idInmueble=item.idInmueble  },new {@class="btn btn-success"})
                     </div>
                 </div>
             </div>

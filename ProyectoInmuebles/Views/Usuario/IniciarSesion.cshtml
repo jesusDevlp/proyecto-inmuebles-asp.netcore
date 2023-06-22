@@ -4,34 +4,31 @@
     ViewData["Title"] = "IniciarSesion";
 }
 
-<h1>IniciarSesion</h1>
-
-<h4>Usuario</h4>
-<hr />
-<div class="row">
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
     <div class="col-md-4">
         <form asp-action="IniciarSesion">
-            
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
             <div class="form-group">
                 <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
+                <input asp-for="email" class="form-control" placeholder="Email" />
                 <span asp-validation-for="email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="contra" class="control-label"></label>
-                <input asp-for="contra" class="form-control" type="password" />
+                <input asp-for="contra" class="form-control" type="password" placeholder="Contraseña" />
                 <span asp-validation-for="contra" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Iniciar Sesion" class="btn btn-primary" />
+                <input type="submit" value="Iniciar Sesion" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-@if(@ViewBag.error !=null){
+@if (@ViewBag.error != null)
+{
     <div class="alert-danger mt-4 p-4">
         @ViewBag.error
     </div>
@@ -39,5 +36,7 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

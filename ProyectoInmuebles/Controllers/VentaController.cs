@@ -13,7 +13,7 @@ namespace ProyectoInmuebles.Controllers
 
         private string cad_cn = "";
 
-       
+
         public VentaController(IConfiguration config)
         {
             cad_cn = config.GetConnectionString("cn1");
@@ -39,10 +39,10 @@ namespace ProyectoInmuebles.Controllers
                 {
                     idTipoInmueble = dr.GetInt32(0),
                     descripInmueble = dr.GetString(1)
-                    
+
                 };
                 tipoInmuebles.Add(obj);
-            }  
+            }
 
             dr.Close();
 
@@ -58,8 +58,8 @@ namespace ProyectoInmuebles.Controllers
             {
                 obj = new Inmueble()
                 {
-                   idInmueble = dr.GetInt32(0),
-                   descInmueble = dr.GetString(1)
+                    idInmueble = dr.GetInt32(0),
+                    descInmueble = dr.GetString(1)
 
                 };
                 inmuebles.Add(obj);
@@ -149,17 +149,17 @@ namespace ProyectoInmuebles.Controllers
                 {
                     idVenta = dr.GetInt32(0),
                     idInmueble = dr.GetInt32(1),
-                    descripInmueble = dr.GetString (2),
-                    idEmpleado = dr.GetInt32 (3),
-                    nombreEmpleado = dr.GetString (4),
-                    nombreCliente = dr.GetString (5),
+                    descripInmueble = dr.GetString(2),
+                    idEmpleado = dr.GetInt32(3),
+                    nombreEmpleado = dr.GetString(4),
+                    nombreCliente = dr.GetString(5),
                     nroDocumento = dr.GetString(6),
-                    idCondicion = dr.GetInt32 (7),
-                    descrpCondicion = dr.GetString (8),
-                    idFormaPago = dr.GetInt32 (9),
-                    descripFormaPago = dr.GetString (10),
+                    idCondicion = dr.GetInt32(7),
+                    descrpCondicion = dr.GetString(8),
+                    idFormaPago = dr.GetInt32(9),
+                    descripFormaPago = dr.GetString(10),
                     totalVenta = dr.GetDecimal(11),
-                    idTipoInmueble = dr.GetInt32(12), 
+                    idTipoInmueble = dr.GetInt32(12),
                     descripTipoInmueble = dr.GetString(13),
                     totalGeneral = dr.GetDecimal(14),
                     fechaVenta = dr.GetDateTime(15)
@@ -180,10 +180,10 @@ namespace ProyectoInmuebles.Controllers
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
             return View(getVentas());
         }
 
@@ -193,27 +193,32 @@ namespace ProyectoInmuebles.Controllers
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
-            Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id)); 
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
+            Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id));
             return View(buscado);
         }
 
         // GET: VentaController/Create
-        public ActionResult CreateVentas()
+        public ActionResult CreateVentas(int idInmueble = 0)
         {
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
             Venta venta = new Venta();
             ViewBag.tipos = new SelectList(getTipoInmuebles(), "idTipoInmueble", "descripInmueble");
-            ViewBag.inmuebles = new SelectList(getInmuebles(), "idInmueble", "descInmueble");
+
+            if (idInmueble != 0)
+                ViewBag.inmuebles = new SelectList(getInmuebles(), "idInmueble", "descInmueble", idInmueble);
+            else
+                ViewBag.inmuebles = new SelectList(getInmuebles(), "idInmueble", "descInmueble");
+
             ViewBag.pagos = new SelectList(getFormaPago(), "idFormaPago", "descripPago");
             ViewBag.condiciones = new SelectList(getCondicion(), "idCondicion", "descripCondicion");
             ViewBag.empleado = new SelectList(getEmpleadoVentas(), "idEmpleado", "nombre");
@@ -229,22 +234,22 @@ namespace ProyectoInmuebles.Controllers
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
             try
             {
                 //if(ModelState.IsValid == true)
-             //   {
-                    SqlHelper.ExecuteNonQuery(cad_cn, "PA_GRABAR_VENTA",
-                        venta.idVenta, venta.idInmueble, venta.idEmpleado,
-                        venta.nombreCliente, venta.nroDocumento,
-                        venta.idCondicion, venta.idFormaPago, venta.totalVenta,
-                        venta.idTipoInmueble, venta.totalGeneral, venta.fechaVenta);
+                //   {
+                SqlHelper.ExecuteNonQuery(cad_cn, "PA_GRABAR_VENTA",
+                    venta.idVenta, venta.idInmueble, venta.idEmpleado,
+                    venta.nombreCliente, venta.nroDocumento,
+                    venta.idCondicion, venta.idFormaPago, venta.totalVenta,
+                    venta.idTipoInmueble, venta.totalGeneral, venta.fechaVenta);
 
-                    ViewBag.MENSAJE = "Venta Registrada correctamente";
-              //  }
+                ViewBag.MENSAJE = "Venta Registrada correctamente";
+                //  }
             }
             catch (Exception ex)
             {
@@ -266,10 +271,10 @@ namespace ProyectoInmuebles.Controllers
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
             Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id));
 
             ViewBag.tipos = new SelectList(getTipoInmuebles(), "idTipoInmueble", "descripInmueble");
@@ -291,10 +296,10 @@ namespace ProyectoInmuebles.Controllers
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
             try
             {
                 SqlHelper.ExecuteNonQuery(cad_cn, "PA_GRABAR_VENTA",
@@ -327,13 +332,13 @@ namespace ProyectoInmuebles.Controllers
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
             Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id));
             return View(buscado);
-           
+
         }
 
         // POST: VentaController/Delete/5
@@ -344,10 +349,10 @@ namespace ProyectoInmuebles.Controllers
             if (!this.VerificarSesion())
             {
                 return RedirectToAction("IniciarSesion", "Usuario");
-                ViewBag.session=false;
+                ViewBag.session = false;
             }
-            ViewBag.session=true;
-            ViewBag.email=HttpContext.Session.GetString("email") as string;
+            ViewBag.session = true;
+            ViewBag.email = HttpContext.Session.GetString("email") as string;
 
             Venta? buscado = getVentas().Find(ventas => ventas.idVenta.Equals(id));
 
@@ -364,7 +369,7 @@ namespace ProyectoInmuebles.Controllers
             catch (Exception ex)
             {
                 ViewBag.MENSAJE = ex.Message;
-                
+
             }
             return View(buscado);
         }

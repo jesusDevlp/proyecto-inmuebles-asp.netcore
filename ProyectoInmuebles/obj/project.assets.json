@@ -10554,19 +10554,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WINDOWS\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Desarrollo de Servicios Web Core\\proyecto-inmuebles-net.core-main2\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\ServiciosProyect\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
       "projectName": "ProyectoInmuebles",
-      "projectPath": "C:\\Desarrollo de Servicios Web Core\\proyecto-inmuebles-net.core-main2\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
-      "packagesPath": "C:\\Users\\WINDOWS\\.nuget\\packages\\",
-      "outputPath": "C:\\Desarrollo de Servicios Web Core\\proyecto-inmuebles-net.core-main2\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Desktop\\ServiciosProyect\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\ProyectoInmuebles.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\ServiciosProyect\\proyecto-inmuebles-asp.netcore\\ProyectoInmuebles\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\WINDOWS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10632,7 +10632,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
